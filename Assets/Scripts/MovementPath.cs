@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour {
+public class MovementPath : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
