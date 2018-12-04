@@ -55,39 +55,40 @@ public class MovementPath : MonoBehaviour {
                 continue;
             }
 
-            if(PathType == PathTypes.linear)
+            if (PathType == PathTypes.linear)
             {
-                if(movingTo <= 0)
+                if (movingTo <= 0)
                 {
                     movementDirection = 1;
                 }
+
+
+                else if (movingTo >= PathSequence.Length - 1)
+                {
+                    movementDirection = -1;
+
+                }
+
             }
 
-            else if(movingTo >= PathSequence.Length - 1)
+            movingTo = movingTo + movementDirection;
+
+
+            if (PathType == PathTypes.loop)
             {
-                movementDirection = -1;
-
-            }
-
-        }
-
-        movingTo = movingTo + movementDirection;
-
-
-        if(PathType == PathTypes.loop)
-        {
-            if(movingTo >= PathSequence.Length)
-            {
-                if(movingTo >= PathSequence.Length)
+                if (movingTo >= PathSequence.Length)
                 {
                     movingTo = 0;
+
                 }
 
-                if(movingTo < 0)
+                if (movingTo < 0)
                 {
                     movingTo = PathSequence.Length - 1;
+
                 }
             }
-        }      
-    }  
+        }
+
+    }
 }
