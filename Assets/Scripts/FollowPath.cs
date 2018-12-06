@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class FollowPath : MonoBehaviour {
 
+    public GameObject Pollen;
+
+    public List<GameObject> Followers;
+
+    public float FollowerSpeed;
+
     public enum MovementType
     {
         MoveTowards,
@@ -35,6 +41,7 @@ public class FollowPath : MonoBehaviour {
             return;
         }
 
+        Followers = new List<GameObject>();
         transform.position = pointInPath.Current.position;
 	}
 	
@@ -62,5 +69,45 @@ public class FollowPath : MonoBehaviour {
         {
             pointInPath.MoveNext();
         }
+
+        if (Followers.Count != 0)
+        {
+
+            for (int i = 0; i < Followers.Count; i++)
+            {
+
+
+                Followers[i].transform.position = Vector3.Lerp(Followers[i].transform.position, this.transform.position, FollowerSpeed);
+
+            }
+
+        }
 	}
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "BeeHive")
+        {
+            for (int i = 0; i < Followers.Count; i++)
+            {
+
+                Destroy(Followers[i]);
+
+            }
+            Followers.Clear();
+
+        }
+        else
+        {
+
+            GameObject NewFollower = Instantiate(Pollen);
+            NewFollower.GetComponent<SpriteRenderer>().color = collision.GetComponent<SpriteRenderer>().color;
+            NewFollower.transform.position = collision.transform.position;
+            Followers.Add(NewFollower);
+
+        }
+
+
+    }
+
 }
