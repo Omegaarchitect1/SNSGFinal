@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 50953328294441826}
   m_Layer: 0
   m_Name: Bee
-  m_TagString: Untagged
+  m_TagString: Bee
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1047774788102820}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.756, y: -0.058, z: 0}
+  m_LocalPosition: {x: 0.756, y: 0.78, z: 0}
   m_LocalScale: {x: 0.07791235, y: 0.07791235, z: 0.07791235}
   m_Children: []
   m_Father: {fileID: 0}
@@ -92,9 +92,12 @@ MonoBehaviour:
   Pollen: {fileID: 0}
   Followers: []
   FollowerSpeed: 0.1
+  Newspawn: {fileID: 1047774788102820}
+  StartPoint: {fileID: 0}
+  SpawnLimit: 8
   Type: 0
   MyPath: {fileID: 0}
-  speed: 3
+  speed: 5
   MaxDistanceToGoal: 0.1
 --- !u!212 &212789982417062830
 SpriteRenderer:

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +10,14 @@ public class FollowPath : MonoBehaviour {
     public List<GameObject> Followers;
 
     public float FollowerSpeed;
+
+    public GameObject Newspawn;
+
+    public GameObject StartPoint;
+
+    //public float Count;
+
+    public float SpawnLimit;
 
     public enum MovementType
     {
@@ -24,13 +33,26 @@ public class FollowPath : MonoBehaviour {
 
     private IEnumerator<Transform> pointInPath;
 
-	// Use this for initialization
-	void Start () {
+
+    private void Awake()
+    {
+        if (CompareTag("Bee"))
+        {
+            StartPoint = GameObject.FindGameObjectWithTag("StartPoint").GetComponent<GameObject>();
+            MyPath = GameObject.FindGameObjectWithTag("SpecificPath").GetComponent<MovementPath>();
+        }
+    }
+    // Use this for initialization
+    void Start () {
+        
+
 		if (MyPath == null)
         {
             Debug.LogError("Movement Path cannot be null.", gameObject);
             return;
         }
+
+
 
         pointInPath = MyPath.GetNextPathPoint();
         pointInPath.MoveNext();
@@ -95,7 +117,8 @@ public class FollowPath : MonoBehaviour {
 
             }
             Followers.Clear();
-
+            if(CompareTag("Bee"))
+            Destroy(this.gameObject);
         }
         else
         {
@@ -109,5 +132,4 @@ public class FollowPath : MonoBehaviour {
 
 
     }
-
 }
