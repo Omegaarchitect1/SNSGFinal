@@ -364,7 +364,7 @@ GameObject:
   - component: {fileID: 146523558}
   m_Layer: 0
   m_Name: Path
-  m_TagString: Untagged
+  m_TagString: SpecificPath
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -465,6 +465,10 @@ Prefab:
       propertyPath: speed
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1444971290088138, guid: 64c682d4eea8c3b40b6be6e50f8d18e9, type: 2}
+      propertyPath: m_TagString
+      value: Butterfly
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 64c682d4eea8c3b40b6be6e50f8d18e9, type: 2}
   m_IsPrefabParent: 0
@@ -506,7 +510,7 @@ GameObject:
   - component: {fileID: 374668501}
   m_Layer: 0
   m_Name: P0
-  m_TagString: Untagged
+  m_TagString: StartPoint
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -518,7 +522,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 374668500}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.13, y: 0.54, z: 0}
+  m_LocalPosition: {x: 0.67, y: 0.36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 146523557}
@@ -857,6 +861,10 @@ Prefab:
       propertyPath: speed
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1444971290088138, guid: 64c682d4eea8c3b40b6be6e50f8d18e9, type: 2}
+      propertyPath: m_TagString
+      value: Butterfly
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 64c682d4eea8c3b40b6be6e50f8d18e9, type: 2}
   m_IsPrefabParent: 0
@@ -965,6 +973,9 @@ MonoBehaviour:
   Pollen: {fileID: 1995179168}
   Followers: []
   FollowerSpeed: 0
+  Newspawn: {fileID: 0}
+  StartPoint: {fileID: 0}
+  SpawnLimit: 0
   Type: 0
   MyPath: {fileID: 1631823325}
   speed: 1
@@ -1261,14 +1272,14 @@ Prefab:
       objectReference: {fileID: 1995179168}
     - target: {fileID: 114892014512064020, guid: 6c71afa55a6c3b548a11d6e6738985af,
         type: 2}
+      propertyPath: StartPoint
+      value: 
+      objectReference: {fileID: 374668500}
+    - target: {fileID: 114892014512064020, guid: 6c71afa55a6c3b548a11d6e6738985af,
+        type: 2}
       propertyPath: MyPath
       value: 
       objectReference: {fileID: 146523558}
-    - target: {fileID: 114892014512064020, guid: 6c71afa55a6c3b548a11d6e6738985af,
-        type: 2}
-      propertyPath: speed
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6c71afa55a6c3b548a11d6e6738985af, type: 2}
   m_IsPrefabParent: 0
@@ -1282,6 +1293,7 @@ GameObject:
   - component: {fileID: 1612957056}
   - component: {fileID: 1612957055}
   - component: {fileID: 1612957057}
+  - component: {fileID: 1612957058}
   m_Layer: 0
   m_Name: BeeHive
   m_TagString: BeeHive
@@ -1363,6 +1375,21 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.50000006
+--- !u!114 &1612957058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1612957054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26db2c3a385bb764db80eb8d1475ad1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxBees: 8
+  Newspawn: {fileID: 1047774788102820, guid: 6c71afa55a6c3b548a11d6e6738985af, type: 2}
+  StartPoint: {fileID: 374668500}
+  Count: 0
 --- !u!1 &1631823324
 GameObject:
   m_ObjectHideFlags: 0
@@ -1970,6 +1997,10 @@ Prefab:
       propertyPath: MyPath
       value: 
       objectReference: {fileID: 1753425529}
+    - target: {fileID: 1444971290088138, guid: 64c682d4eea8c3b40b6be6e50f8d18e9, type: 2}
+      propertyPath: m_TagString
+      value: Butterfly
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 64c682d4eea8c3b40b6be6e50f8d18e9, type: 2}
   m_IsPrefabParent: 0

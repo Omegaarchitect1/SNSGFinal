@@ -8,6 +8,10 @@ TagManager:
   - BlueFlower
   - YellowFlower
   - BeeHive
+  - Bee
+  - Butterfly
+  - SpecificPath
+  - StartPoint
   layers:
   - Default
   - TransparentFX

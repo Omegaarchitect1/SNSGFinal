@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b25c4e24d0754904e8b5b8b3980d7640, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Pollen: {fileID: 0}
+  Pollen: {fileID: 1792919742951032, guid: 837ca9f38495a994ab40904f664094bf, type: 2}
   Followers: []
   FollowerSpeed: 0.1
   Newspawn: {fileID: 1047774788102820}
